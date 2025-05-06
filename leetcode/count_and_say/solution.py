@@ -15,40 +15,33 @@ def createMap(number:str) :
                 break
             count += 1
         
-        print("i: ",i)
-
         pair[number[i]] = count
-        print("pair: ", pair)
         i += count 
         pairList.append(pair)
     return pairList
-
-
 
 
 def generateNumberString(arr:dict):
     result = ''
     for item in arr:
         for keys,value in item.items():
-            stringStream = keys+str(value)
+            stringStream = str(value)+keys
+            
             result += stringStream
     return result
 
 
 def countAndSey(n:int) -> str:
-    finalResult = ''
     numberSting = '1'
+    if n == 1:
+        return "1"
+    n = n-1
     while(n):
         numberList = createMap(numberSting)
         numberSting = generateNumberString(numberList)
-
         n -= 1
     return numberSting
 
 res = countAndSey(4)
-print(res)
 
-
-
-# countSayResult = generateNumberString(mappedList)
 
