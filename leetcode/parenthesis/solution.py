@@ -45,4 +45,7 @@ def checkParenthesis(string):
 
 
 print(checkParenthesis("()[]{}"))
+
+
+# {()[]({})}
         
